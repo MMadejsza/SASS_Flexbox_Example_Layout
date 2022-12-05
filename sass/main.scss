@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+$main-color: #8daae5;
+$default-fonts: arial, sans-serif;
+$special-fonts: 'PT Sans', 'Roboto', arial, sans-serif;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	background-color: $main-color;
+	font-family: $default-fonts;
+}
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	font-size: 2rem;
+	max-width: 1000px;
+	background-color: #fff;
+	margin: 0 auto;
+	box-shadow: 0 0 4px 0 black;
+}
+
+.logo {
+	flex-basis: 200px;
+
+	&__image {
+		display: block;
+		width: 100%;
+	}
+}
+
+.search {
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+	@media (max-width: 799px) {
+		flex-basis: 100%;
+		order: -1;
+	}
+	&__input {
+		flex-basis: 60%;
+		height: 50%;
+		max-height: 60px;
+		min-height: 50px;
+		margin: 15px 0;
+		margin-right: 2vh;
+		padding: 0 10px;
+		font-size: 1.4rem;
+		&:focus {
+			box-shadow: 0 0 2px 2px $main-color;
+			font-weight: bold;
+		}
+	}
+	&__btn {
+		height: 50%;
+		max-height: 60px;
+		min-height: 50px;
+		margin: 15px 0;
+		font-size: 1.4rem;
+		padding: 0 10px;
+		border: 2px solid black;
+		background-color: white;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		cursor: pointer;
+		transition: 0.4s;
+		&:hover {
+			background-color: black;
+			color: white;
+		}
+	}
+}
+.settings {
+	display: flex;
+	padding: 0 30px 0 50px;
+	align-items: center;
+	@media (max-width: 799px) {
+		flex-grow: 1;
+		justify-content: flex-end;
+	}
+	&__icon-link {
+		margin: 0 10px;
+		font-size: 3rem;
+		color: grey;
+		&:hover {
+			color: black;
+		}
+	}
+}
+.menu {
+	flex-basis: 100%;
+	height: 70px;
+	margin-top: 10px;
+	background-color: rgb(27, 27, 29);
+	font-family: $special-fonts;
+	padding: 15px 50px 15px 80px;
+	&__list {
+		display: flex;
+		list-style: none;
+	}
+	&__item {
+		margin: 0 20px;
+		font-size: 2rem;
+		text-transform: uppercase;
+		line-height: 4rem;
+		transition: 0.1s;
+		&:hover {
+			border-bottom: 2px yellow solid;
+		}
+		&:nth-last-child(1) {
+			margin-left: auto;
+			border: 2px solid #666;
+			&:hover {
+				border-color: yellow;
+			}
+			.menu__link {
+				padding: 0 22px;
+			}
+		}
+	}
+	&__link {
+		display: block;
+		color: white;
+		text-decoration: none;
+	}
+}
+
+.article {
+	padding: 30px 50px;
+	color: #333;
+	text-align: center;
+	&--small {
+		padding: 20px 30px;
+	}
+	&__image {
+		display: block;
+		width: 100%;
+		border-radius: 5px;
+	}
+	&__title {
+		font-family: $special-fonts;
+		text-transform: uppercase;
+		font-size: 3rem;
+		padding: 35px 0 15px;
+		.article--small & {
+			padding: 25px 0 10px;
+			font-size: 1.8rem;
+			background-color: $main-color;
+		}
+	}
+	&__introduction {
+		line-height: 1.6rem;
+		font-size: 1.6rem;
+	}
+	&__btn {
+		display: block;
+		margin: 10px auto;
+		width: 50%;
+		min-width: 200px;
+		font-size: 1.8rem;
+		border: 2px solid black;
+		padding: 6px 12px;
+		background-color: white;
+		color: black;
+		text-decoration: none;
+		&:hover {
+			background-color: $main-color;
+		}
+	}
+}
+.main-articles {
+	background-color: $main-color;
+	flex-basis: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	&__intro {
+		flex-basis: 100%;
+		padding: 10px 0;
+		background-color: rgba(0, 0, 0, 0.2);
+		margin: 60px 0 30px;
+		text-align: center;
+		font-size: 4.4rem;
+		letter-spacing: 2px;
+	}
+	.article {
+		flex-basis: 50%;
+		@media (max-width: 799px) {
+			flex-basis: 100%;
+		}
+	}
+}
+.main-list {
+	flex-basis: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	.article {
+		flex-basis: 30%;
+		@media (max-width: 1023px) {
+			flex-basis: 45%;
+		}
+		@media (max-width: 799px) {
+			flex-basis: 95%;
+		}
+	}
+}
+footer {
+	flex-basis: 100%;
+	background-color: $main-color;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 20px 0;
+	.sm-links {
+		flex-basis: 30%;
+	}
+}
+.sm-links {
+	font-family: $special-fonts;
+	padding: 20px;
+	&--darken {
+		background-color: darken($main-color, 5%);
+	}
+	&__title {
+		margin: 20px 0 40px;
+		font-size: 2.4rem;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 400;
+	}
+	&__item {
+		text-indent: 40px;
+		font-size: 1.8rem;
+	}
+}
