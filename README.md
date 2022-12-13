@@ -8,6 +8,6 @@ This simple project is a FlexBox usage in SASS preprocessor using a little of BE
 SCSS syntax, Variables 
 
 ### CSS: 
-Flexbox, BEM, Media Queries, IMG generator, FontAwesome, GoogleFonts
+Flexbox, Selectors Level 4 - pseudo-classes, BEM methodology, Media Queries, IMG generator, FontAwesome, GoogleFonts
 
 Enjoy, MMadejsza
